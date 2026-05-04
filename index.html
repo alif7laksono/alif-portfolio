@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alif Wiji Laksono — Frontend Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav>
-    <div class="nav-brand">ALIF</div>
+    <div class="nav-brand">AWL</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -192,7 +196,8 @@
           <div class="timeline-content">
             <span class="timeline-date">Nov 2024 – Present</span>
             <h3>Frontend Developer <span class="at">@ Veslavia Agency</span></h3>
-            <p>Founded and operate digital wedding invitation platform. Built 4+ production-ready projects for wedding, photography, interior design, and government sectors.</p>
+            <p>Founded and operate digital wedding invitation platform. Built 4+ production-ready projects for wedding,
+              photography, interior design, and government sectors.</p>
           </div>
         </div>
 
@@ -201,7 +206,8 @@
           <div class="timeline-content">
             <span class="timeline-date">Jul – Dec 2025</span>
             <h3>IT Staff <span class="at">@ Balkesmas Ambarawa</span></h3>
-            <p>Built official government website. Maintained IT systems and infrastructure for clinical and administrative operations.</p>
+            <p>Built official government website. Maintained IT systems and infrastructure for clinical and
+              administrative operations.</p>
           </div>
         </div>
 
@@ -210,7 +216,8 @@
           <div class="timeline-content">
             <span class="timeline-date">May 2022 – Sep 2023</span>
             <h3>Content Moderator <span class="at">@ PT. Transcosmos Indonesia</span></h3>
-            <p>High-volume content review with 800–1,000 tasks/shift, maintaining SLA targets and cross-team collaboration.</p>
+            <p>High-volume content review with 800–1,000 tasks/shift, maintaining SLA targets and cross-team
+              collaboration.</p>
           </div>
         </div>
 
@@ -228,18 +235,34 @@
       <div class="contact-links">
         <a href="mailto:alif7laksono@gmail.com" class="btn-primary">alif7laksono@gmail.com</a>
         <a href="https://github.com/alif7laksono" target="_blank" class="btn-ghost">GitHub</a>
-        <a href="https://www.linkedin.com/in/alif-wiji-laksono-419215272/" target="_blank" class="btn-ghost">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/alif-wiji-laksono-419215272/" target="_blank"
+          class="btn-ghost">LinkedIn</a>
       </div>
       <p class="footer-copy">© 2026 Alif Wiji Laksono · Semarang, Indonesia</p>
     </div>
   </footer>
 
   <script>
-    // Hamburger menu
+    // Hamburger menu — toggle icon ☰ / ✕ pada tombol yang sama
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+
+    const openMenu = () => {
+      navLinks.classList.add('open');
+      hamburger.innerHTML = '&#10005;'; // ganti jadi ✕
+    };
+    const closeMenu = () => {
+      navLinks.classList.remove('open');
+      hamburger.innerHTML = '&#9776;'; // balik ke ☰
+    };
+
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+      navLinks.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    // Auto-close + balik icon saat link diklik
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
 
     // Scroll reveal
@@ -256,4 +279,5 @@
   </script>
 
 </body>
+
 </html>
